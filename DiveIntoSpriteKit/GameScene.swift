@@ -12,6 +12,16 @@ import SpriteKit
 class GameScene: SKScene {
     override func didMove(to view: SKView) {
         // this method is called when your game scene is ready to run
+        let background = SKSpriteNode(imageNamed: "water.jpg")
+        background.zPosition = -1
+        addChild(background)
+        
+        if let particles = SKEmitterNode(fileNamed: "Bubbles"){
+            particles.advanceSimulationTime(10)
+            particles.position.x = 512
+            addChild(particles)
+        }
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
