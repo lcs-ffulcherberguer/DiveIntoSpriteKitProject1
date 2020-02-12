@@ -10,6 +10,9 @@ import SpriteKit
 
 @objcMembers
 class GameScene: SKScene {
+    
+    let player = SKSpriteNode(imageNamed: "player-submarine.png")
+    
     override func didMove(to view: SKView) {
         // this method is called when your game scene is ready to run
         let background = SKSpriteNode(imageNamed: "water.jpg")
@@ -21,6 +24,11 @@ class GameScene: SKScene {
             particles.position.x = 512
             addChild(particles)
         }
+        
+        player.position.x = -400
+        player.zPosition = 1
+        addChild(player)
+
         
     }
 
